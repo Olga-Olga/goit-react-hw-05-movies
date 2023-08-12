@@ -7,11 +7,6 @@ export const Layout = () => {
   return (
     <LayoutWrapper>
       <NavBar />
-      {/* <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/collection">CollectionNavBar</NavLink>
-      </nav> */}
-
       <WrapperOutlet>
         <Outlet />
       </WrapperOutlet>
