@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, NavLink, Outlet } from 'react-router-dom';
+import { Route, Routes, NavLink } from 'react-router-dom';
 import { Layout } from './Layout.jsx';
 import { Test } from './Test.jsx';
 
