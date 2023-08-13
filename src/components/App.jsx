@@ -3,7 +3,7 @@ import React, { lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Layout } from './Layout';
 // import { Search } from './pages/Search.jsx';
-import { NotFound } from './pages/NotFound';
+// import { NotFound } from './pages/NotFound';
 // import { HomeList } from './pages/HomeList';
 // import { Cast } from './pages/Cast';
 // import { Reviews } from './pages/Reviews';
@@ -14,6 +14,7 @@ const Reviews = lazy(() => import('./pages/Reviews'));
 const Cast = lazy(() => import('./pages/Cast'));
 const HomeList = lazy(() => import('./pages/HomeList'));
 const Search = lazy(() => import('./pages/Search'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 export const App = () => {
   return (

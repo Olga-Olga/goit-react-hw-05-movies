@@ -51,7 +51,9 @@ const Movie = () => {
         <Link to="reviews">Show Reviews</Link>
       </li>
       <hr />
-      <Outlet />
+      <Suspense fallback={<h1>Loading nested rotes</h1>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
