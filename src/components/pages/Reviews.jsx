@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-// import { Link, Outlet } from 'react-router-dom';
 
 export const Reviews = () => {
   const { id } = useParams({});

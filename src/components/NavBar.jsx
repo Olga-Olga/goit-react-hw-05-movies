@@ -6,7 +6,6 @@ export const NavBar = () => {
     <SideBar>
       <StyledLink to="/">Home</StyledLink>
       <StyledLink to="/movies">Movies</StyledLink>
-      {/* <StyledLink to="/users">Users</StyledLink> */}
     </SideBar>
   );
 };

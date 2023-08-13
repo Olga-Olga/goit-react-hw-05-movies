@@ -14,12 +14,9 @@ export const Cast = () => {
   useEffect(() => {
     axios.get(`/movie/${id}/credits?api_key=${key}`).then(({ data }) => {
       setCredits(data.cast);
-      console.log(data.cast);
-      console.log(credits);
     });
   }, [id]);
 
-  const { character, profile_path } = credits;
   return (
     <div>
       <ul>
