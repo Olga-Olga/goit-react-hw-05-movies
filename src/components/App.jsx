@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Search } from './pages/Search.jsx';
 import { NotFound } from './pages/NotFound';
@@ -20,7 +20,8 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     </div>
