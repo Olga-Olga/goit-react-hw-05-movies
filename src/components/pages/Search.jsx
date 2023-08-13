@@ -26,7 +26,7 @@ export const Search = () => {
           },
         })
         .then(({ data }) => {
-          setList(data);
+          setList(data.results);
         });
     }
   }, [query]);
@@ -44,6 +44,10 @@ export const Search = () => {
         />
         <button>Search</button>
       </form>
+      <hr />
+      <ul>
+        {list && list.map(el => <li key={list.id}>{el.original_title}</li>)}
+      </ul>
     </div>
   );
 };
