@@ -47,6 +47,10 @@ const StyledIMG = styled.img`
   height: 100px;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const StyledItem = styled.li`
