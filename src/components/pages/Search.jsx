@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export const Search = () => {
@@ -46,7 +47,13 @@ export const Search = () => {
       </form>
       <hr />
       <ul>
-        {list && list.map(el => <li key={list.id}>{el.original_title}</li>)}
+        {list &&
+          list.map(el => (
+            <li key={el.id}>
+              <Link to={`/movies/${el.id}`}>{el.original_title}</Link>
+              {/* {el.original_title} */}
+            </li>
+          ))}
       </ul>
     </div>
   );
