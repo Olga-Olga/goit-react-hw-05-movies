@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { fetchSearchMovie } from '../../services/api';
 
-export const Search = () => {
+const Search = () => {
   const [value, setValue] = useState('');
   const [list, setList] = useState('');
   // const location = useLocation();
@@ -42,7 +42,12 @@ export const Search = () => {
         {list &&
           list.map(el => (
             <li key={el.id}>
-              <Link to={`/movies/${el.id}`}>{el.original_title}</Link>
+              <Link
+                // state={{ from: location }}
+                to={`/movies/${el.id}`}
+              >
+                {el.original_title}
+              </Link>
               {/* {el.original_title} */}
             </li>
           ))}
@@ -50,3 +55,5 @@ export const Search = () => {
     </div>
   );
 };
+
+export default Search;

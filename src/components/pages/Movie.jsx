@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { fetchMovieById } from '../../services/api';
 
-export const Movie = () => {
+const Movie = () => {
   const { id } = useParams({});
   const navigate = useNavigate();
   const [info, setInfo] = useState({ dafault: 1234 });
-
+  // const location = useLocation();
   useEffect(() => {
     fetchMovieById(id).then(({ data }) => {
       setInfo(data);
@@ -20,7 +20,7 @@ export const Movie = () => {
   return (
     <div>
       <button onClick={() => navigate(-1)}> Go back</button>
-      {/* <Link to={location.state?.from}> Go back</Link> */}
+      {/* <Link to={location.state?.from || '/'}> Go back</Link> */}
       <hr />
       <img
         src={
@@ -55,3 +55,5 @@ export const Movie = () => {
     </div>
   );
 };
+
+export default Movie;

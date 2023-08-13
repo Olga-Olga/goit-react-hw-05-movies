@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { styled } from 'styled-components';
 import { fetchCredits } from '../../services/api';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams({});
   const [credits, setCredits] = useState({ dafault: 1234 });
 
@@ -55,3 +55,5 @@ const StyledItem = styled.li`
   flex-direction: column;
   padding: 20px;
 `;
+
+export default Cast;
