@@ -1,17 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 
 export const Search = () => {
-  const [value, setValue] = useState('');
+  const key = 'caae91fa03dadd61d2d243ec0631262a';
+  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+  const [value, setValue] = useState('love');
+  const [list, setList] = useState('');
+
   const [searchParams, setSearchParams] = useSearchParams();
   const onSubmitSeart = e => {
     e.preventDefault();
     setSearchParams({ query: value });
   };
 
+  const query = searchParams.get('query');
+
   useEffect(() => {
-    console.log(12);
-  }, []);
+    if (query) {
+      axios
+        .get(`/search/movie`, {
+          params: {
+            query,
+            api_key: key,
+          },
+        })
+        .then(({ data }) => {
+          setList(data);
+        });
+    }
+  }, [query]);
 
   return (
     <div>
