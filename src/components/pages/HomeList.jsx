@@ -10,8 +10,8 @@ export const HomeList = () => {
   useEffect(() => {
     axios.get(`/trending/movie/day?api_key=${key}`).then(({ data }) => {
       setFilms(data.results);
-      console.log(data.results);
-      console.log(films);
+      //   console.log(data.results);
+      //   console.log(films);
     });
   }, []);
 
@@ -21,7 +21,7 @@ export const HomeList = () => {
       <ul>
         {films.map(film => (
           <li key={film.id}>
-            <Link to={`${film.id}`}>{film.title}</Link>
+            <Link to={`/movies/${film.id}`}>{film.title}</Link>
           </li>
         ))}
       </ul>
