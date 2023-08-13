@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { fetchTrendingMovie } from '../../services/api';
 
 export const HomeList = () => {
-  const key = 'caae91fa03dadd61d2d243ec0631262a';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    axios.get(`/trending/movie/day?api_key=${key}`).then(({ data }) => {
+    fetchTrendingMovie().then(({ data }) => {
       setFilms(data.results);
     });
   }, []);

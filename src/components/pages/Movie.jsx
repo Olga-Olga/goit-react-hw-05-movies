@@ -1,19 +1,16 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { fetchMovieById } from '../../services/api';
 
 export const Movie = () => {
   const { id } = useParams({});
   const navigate = useNavigate();
-
-  const key = 'caae91fa03dadd61d2d243ec0631262a';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
   const [info, setInfo] = useState({ dafault: 1234 });
 
   useEffect(() => {
-    axios.get(`/movie/${id}?api_key=${key}`).then(({ data }) => {
+    fetchMovieById(id).then(({ data }) => {
       setInfo(data);
     });
   }, [id]);

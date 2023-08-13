@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { fetchSearchMovie } from '../../services/api';
 
 export const Search = () => {
-  const key = 'caae91fa03dadd61d2d243ec0631262a';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-  const [value, setValue] = useState('love');
+  const [value, setValue] = useState('');
   const [list, setList] = useState('');
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,16 +17,9 @@ export const Search = () => {
 
   useEffect(() => {
     if (query) {
-      axios
-        .get(`/search/movie`, {
-          params: {
-            query,
-            api_key: key,
-          },
-        })
-        .then(({ data }) => {
-          setList(data.results);
-        });
+      fetchSearchMovie(query).then(({ data }) => {
+        setList(data.results);
+      });
     }
   }, [query]);
 

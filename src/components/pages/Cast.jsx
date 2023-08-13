@@ -1,18 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { styled } from 'styled-components';
+import { fetchCredits } from '../../services/api';
 
 export const Cast = () => {
   const { id } = useParams({});
-
-  const key = 'caae91fa03dadd61d2d243ec0631262a';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
   const [credits, setCredits] = useState({ dafault: 1234 });
 
   useEffect(() => {
-    axios.get(`/movie/${id}/credits?api_key=${key}`).then(({ data }) => {
+    fetchCredits(id).then(({ data }) => {
       setCredits(data.cast);
     });
   }, [id]);

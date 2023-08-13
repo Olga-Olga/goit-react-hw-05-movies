@@ -1,17 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
-
+import { fetchMovieReview } from '../../services/api';
 export const Reviews = () => {
   const { id } = useParams({});
-
-  const key = 'caae91fa03dadd61d2d243ec0631262a';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
   const [reviews, setReviews] = useState({});
 
   useEffect(() => {
-    axios.get(`/movie/${id}/reviews?api_key=${key}`).then(({ data }) => {
+    fetchMovieReview(id).then(({ data }) => {
       setReviews(data.results);
     });
   }, [id]);
