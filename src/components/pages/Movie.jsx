@@ -20,6 +20,7 @@ export const Movie = () => {
   return (
     <div>
       <button onClick={() => navigate(-1)}> Go back</button>
+      {/* <Link to={location.state?.from}> Go back</Link> */}
       <hr />
       <img
         src={

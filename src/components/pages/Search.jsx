@@ -6,6 +6,7 @@ import { fetchSearchMovie } from '../../services/api';
 export const Search = () => {
   const [value, setValue] = useState('');
   const [list, setList] = useState('');
+  // const location = useLocation();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const onSubmitSeart = e => {
