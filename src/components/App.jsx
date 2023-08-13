@@ -6,18 +6,20 @@ import { NotFound } from './pages/NotFound';
 import { Users } from './pages/Users';
 import { SingleUser } from './pages/SingleUser';
 import { Biography } from './Biography';
+import { HomeList } from './pages/HomeList';
+import { Cast } from './pages/Cast';
+import { Reviews } from './pages/Reviews';
 
 export const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<div>Home Page</div>} />
-          <Route path="collection" element={<Test />} />
-          <Route path="users" element={<Users />} />
-          <Route path="users/:id" element={<SingleUser />}>
-            <Route path="bio" element={<Biography />} />
-            <Route path="address" element={<h1>user address</h1>} />
+          <Route index element={<HomeList />} />
+          <Route path="movies" element={<Test />} />
+          <Route path="movies/:id" element={<h1>details</h1>}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Route>

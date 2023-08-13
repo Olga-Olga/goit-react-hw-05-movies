@@ -5,8 +5,8 @@ export const NavBar = () => {
   return (
     <SideBar>
       <StyledLink to="/">Home</StyledLink>
-      <StyledLink to="/collection">Collection</StyledLink>
-      <StyledLink to="/users">Users</StyledLink>
+      <StyledLink to="/movies">Movies</StyledLink>
+      {/* <StyledLink to="/users">Users</StyledLink> */}
     </SideBar>
   );
 };
