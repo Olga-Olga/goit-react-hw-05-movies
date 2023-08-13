@@ -7,7 +7,6 @@ export const Layout = () => {
   return (
     <LayoutWrapper>
       <NavBar />
-
       <WrapperOutlet>
         <Outlet />
       </WrapperOutlet>

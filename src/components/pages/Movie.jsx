@@ -1,10 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 export const Movie = () => {
   const { id } = useParams({});
+  const navigate = useNavigate();
 
   const key = 'caae91fa03dadd61d2d243ec0631262a';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3';
@@ -13,7 +15,6 @@ export const Movie = () => {
   useEffect(() => {
     axios.get(`/movie/${id}?api_key=${key}`).then(({ data }) => {
       setInfo(data);
-      console.log(info);
     });
   }, [id]);
 
@@ -21,8 +22,14 @@ export const Movie = () => {
 
   return (
     <div>
+      <button onClick={() => navigate(-1)}> Go back</button>
+      <hr />
       <img
-        src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
+        src={
+          backdrop_path
+            ? `https://image.tmdb.org/t/p/w185/${backdrop_path}`
+            : 'https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg'
+        }
         alt={title}
       />
       <h1>{title}</h1>
@@ -31,10 +38,22 @@ export const Movie = () => {
       <p> {overview}</p>
       <div>
         Genres:
-        {/* {genres.map(el => (
-          <p key={el.id}>{el.name}</p>
-        ))} */}
+        {genres ? (
+          genres.map(el => <p key={el.id}>{el.name}</p>)
+        ) : (
+          <div>No genres</div>
+        )}
       </div>
+      <hr />
+      <div>Addition information</div>
+      <li>
+        <Link to="cast">Show Cast</Link>
+      </li>
+      <li>
+        <Link to="reviews">Show Reviews</Link>
+      </li>
+      <hr />
+      <Outlet />
     </div>
   );
 };

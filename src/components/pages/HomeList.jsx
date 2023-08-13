@@ -10,8 +10,6 @@ export const HomeList = () => {
   useEffect(() => {
     axios.get(`/trending/movie/day?api_key=${key}`).then(({ data }) => {
       setFilms(data.results);
-      //   console.log(data.results);
-      //   console.log(films);
     });
   }, []);
 
