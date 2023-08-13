@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 
 export const SingleUser = () => {
@@ -17,6 +18,10 @@ export const SingleUser = () => {
       <h2>Name {user.name}</h2>
       <h2>Email {user.email}</h2>
       <h2>Adress {user.address?.city}</h2>
+      <hr />
+      <Link to="bio">Show Urer biography</Link>
+      <Link to="address">Show Urer adress</Link>
+      <Outlet />
     </div>
   );
 };
