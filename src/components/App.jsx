@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
-import { Test } from './pages/Test.jsx';
+import { Search } from './pages/Search.jsx';
 import { NotFound } from './pages/NotFound';
 import { HomeList } from './pages/HomeList';
 import { Cast } from './pages/Cast';
@@ -14,7 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeList />} />
-          <Route path="movies" element={<Test />} />
+          <Route path="movies" element={<Search />} />
           <Route path="movies/:id" element={<Movie />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
