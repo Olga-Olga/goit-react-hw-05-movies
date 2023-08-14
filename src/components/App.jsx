@@ -9,12 +9,12 @@ import { Layout } from './Layout';
 // import { Reviews } from './pages/Reviews';
 // import { Movie } from './pages/Movie';
 
-const Movie = lazy(() => import('./pages/Movie'));
-const Reviews = lazy(() => import('./pages/Reviews'));
-const Cast = lazy(() => import('./pages/Cast'));
-const HomeList = lazy(() => import('./pages/HomeList'));
-const Search = lazy(() => import('./pages/Search'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+const Movie = lazy(() => import('../pages/Movie'));
+const Reviews = lazy(() => import('./Reviews'));
+const Cast = lazy(() => import('./Cast'));
+const HomeList = lazy(() => import('../pages/HomeList'));
+const Search = lazy(() => import('../pages/Search'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 export const App = () => {
   return (

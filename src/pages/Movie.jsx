@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { useParams } from 'react-router';
 import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { fetchMovieById } from '../../services/api';
+import { fetchMovieById } from '../services/api';
 import { useLocation } from 'react-router-dom';
 const Movie = () => {
   const { id } = useParams({});

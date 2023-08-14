@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { fetchSearchMovie } from '../../services/api';
+import { fetchSearchMovie } from '../services/api';
 import { useLocation } from 'react-router-dom';
 const Search = () => {
   const [value, setValue] = useState('');
@@ -11,7 +11,7 @@ const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const onSubmitSeart = e => {
     e.preventDefault();
-    setSearchParams({ query: value });
+    setSearchParams(value ? { query: value } : {});
   };
 
   const query = searchParams.get('query');

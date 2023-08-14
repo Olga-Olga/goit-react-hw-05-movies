@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import { styled } from 'styled-components';
-import { fetchCredits } from '../../services/api';
+import { fetchCredits } from '../services/api';
 
 const Cast = () => {
   const { id } = useParams({});
