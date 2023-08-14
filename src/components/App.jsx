@@ -5,9 +5,6 @@ import { Layout } from './Layout';
 // import { Search } from './pages/Search.jsx';
 // import { NotFound } from './pages/NotFound';
 // import { HomeList } from './pages/HomeList';
-// import { Cast } from './pages/Cast';
-// import { Reviews } from './pages/Reviews';
-// import { Movie } from './pages/Movie';
 
 const Movie = lazy(() => import('../pages/Movie'));
 const Reviews = lazy(() => import('./Reviews'));
