@@ -10,7 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <BrowserRouter basename="goit-react-hw-05-movies">
+  <BrowserRouter>
+    {/* <BrowserRouter basename="goit-react-hw-05-movies"> */}
     <App />
     {/* <GlobalStyles /> */}
     {/* <ToastContainer autoClose={1000} /> */}
